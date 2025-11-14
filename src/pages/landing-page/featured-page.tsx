@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import PropertyCard from "@/components/PropertyCard";
 import belowBg from "@/assets/belowwbg.png";
+import bgvideo from "@/assets/bgvideo.mp4";
 
 export interface Property {
   id: string | number;
@@ -101,12 +102,15 @@ const PropertiesSection: React.FC<PropertiesSectionProps> = ({
       id="properties"
       ref={(el) => (sectionRefs.current.properties = el)}
       className="relative py-10 overflow-hidden"
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at center, rgba(50,50,50,1) 0%, rgba(5,5,5,1) 100%)",
-      }}
     >
+      {/* <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
+        /> */}
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div
@@ -215,16 +219,7 @@ const PropertiesSection: React.FC<PropertiesSectionProps> = ({
       {/* Bottom Decoration */}
     {/* Section End Image */}
 
- <div className="w-full flex mt-2 justify-start overflow-hidden leading-none">
-  <img
-    src={belowBg}
-    alt="Bottom Decoration"
-    className="
-      w-[220px] sm:w-[300px] md:w-[400px] lg:w-[500px]
-      h-auto object-cover opacity-90 transition-all duration-500
-    "
-  />
-</div>
+
 
     </section>
   );

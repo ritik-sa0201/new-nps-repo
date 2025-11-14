@@ -4,14 +4,14 @@ const founders = [
   {
     name: "Mr T  Chandra",
     role: "Founder & Managing Director",
-    image: "https://randomuser.me/api/portraits/men/15.jpg", // dummy image
+    image: "https://static.vecteezy.com/system/resources/thumbnails/048/818/198/small/confident-young-man-smiling-amongst-autumn-leaves-in-a-sunlit-park-photo.jpeg", // dummy image
     quote:
       "Our vision is to redefine the real estate experience — making every client interaction transparent, rewarding, and memorable.",
   },
   {
     name: "Aishwarya Diwan",
     role: "Co-Founder & Operations Head",
-    image: "https://randomuser.me/api/portraits/women/12.jpg", // dummy image
+    image: "https://i.pinimg.com/236x/5c/eb/88/5ceb88e1706171e66fee4604c8178bcb.jpg", // dummy image
     quote:
       "We believe in building trust through consistency, innovation, and a deep understanding of our clients’ aspirations.",
   },

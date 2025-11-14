@@ -2,6 +2,7 @@ import React from "react";
 import { CheckCircle2 } from "lucide-react";
 import icon8 from "@/assets/icon8.png";
 import icon9 from "@/assets/icon9.png";
+import bgvideo from "@/assets/bgvideo.mp4";
 import icon10 from "@/assets/icon10.png";
 interface WhyChooseSectionProps {
   visibleSections: Set<string>;
@@ -34,8 +35,16 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
     <section
       id="why-choose"
       ref={(el) => (sectionRefs.current["why-choose"] = el)}
-      className="relative py-24 bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden"
+      className="relative py-24 text-white overflow-hidden"
     >
+         {/* <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
+        /> */}
       {/* Floating Gold Glows */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-24 left-12 w-72 h-72 bg-gold/60 rounded-full blur-3xl animate-pulse-slow" />

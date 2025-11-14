@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import icon5 from "@/assets/icon5.png";
 import icon6 from "@/assets/icon6.png";
 import icon7 from "@/assets/icon7.png";
-import logo from "@/assets/NPS.png";
-import bg1 from "@/assets/bg/bg1.jpg";
-import bg2 from "@/assets/bg/bg2.jpg";
-import bg3 from "@/assets/bg/bg4.jpg";
+
+import bg1 from "@/assets/bg/4.jpg";
+import bg2 from "@/assets/bg/7.jpg";
+import bg3 from "@/assets/bg/8.jpg";
 
 const HeroSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -37,7 +37,7 @@ const HeroSection = () => {
   const stats = [
     { src: icon5, label: "Premium Properties", value: "100+" },
     { src: icon6, label: "Happy Clients", value: "500+" },
-    { src: icon7, label: "Years Experience", value: "5+" },
+    { src: icon7, label: "Years Experience", value: "15+" },
   ];
 
   return (
@@ -64,7 +64,7 @@ const HeroSection = () => {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/40 to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/35 to-black/20" />
 
       {/* ✨ Floating particles */}
       <div className="absolute inset-0 pointer-events-none">
@@ -83,13 +83,15 @@ const HeroSection = () => {
       </div>
 
       {/* 🌟 Main Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-5xl w-full flex flex-col items-center">
+      <div className="relative z-10 text-center text-white px-4 max-w-5xl w-full flex flex-col items-center "
+       
+      >
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-3 sm:mb-4"
+          className="font-serif text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-3 sm:mb-4"
         >
           Find Your Dream Place
           <br />
@@ -105,7 +107,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="flex items-center justify-center gap-4 sm:gap-6 mt-2 sm:mt-4 mb-4 sm:mb-6 flex-wrap"
         >
-          <div className="flex items-center gap-3 sm:gap-4">
+          {/* <div className="flex items-center gap-3 sm:gap-4">
             <div className="flex items-center text-white text-lg sm:text-xl md:text-2xl font-semibold whitespace-nowrap">
               <Phone className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-yellow-400" />
               +91 93119 31770
@@ -115,7 +117,7 @@ const HeroSection = () => {
               alt="Noida Property Solution Logo"
               className="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 object-contain"
             />
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Search Bar */}
@@ -123,7 +125,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 w-full max-w-lg mb-6 sm:mb-8"
+          className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 w-full max-w-2xl mb-6 sm:mb-8"
         >
           <div className="flex items-center w-full px-4 py-2 sm:py-3 rounded-full backdrop-blur-md bg-white/10 border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.1)]">
             <input
@@ -136,7 +138,7 @@ const HeroSection = () => {
           </div>
           <Button
             onClick={handleSearch}
-            className="flex items-center gap-1 sm:gap-2 bg-gold text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-yellow-400 transition-all shadow-lg text-sm sm:text-base"
+            className="flex items-center gap-1 sm:gap-2 bg-gold text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-yellow-400 transition-all shadow-lg text-sm sm:text-base"
           >
             <Search className="w-4 h-4 sm:w-5 sm:h-5" />
             Search
@@ -161,15 +163,16 @@ const HeroSection = () => {
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-center group cursor-pointer w-24 sm:w-32"
+              className="text-center group cursor-pointer w-30 sm:w-50"
             >
               <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold/10 border border-gold/20 mb-2 group-hover:scale-110 group-hover:bg-gold/20 transition-all duration-300">
                 <img src={item.src} className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
               </div>
-              <p className="text-2xl sm:text-3xl font-bold text-gold mb-0.5 group-hover:scale-110 transition-transform">
+                <span className=" bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"></span>
+              <p className=" font-extrabold text-3xl bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] group-hover:scale-110 transition-transform">
                 {item.value}
               </p>
-              <p className="text-xs sm:text-sm text-white/80">{item.label}</p>
+              <p className=" text-md font-extrabold sm:text-lg text-white/80">{item.label}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import belowBg from "@/assets/belowwbg.png";
+import bgvideo from "@/assets/bgvideo.mp4";
 import GoldenParticles from "@/components/golden-particles";
 
 interface Benefit {
@@ -46,16 +47,21 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   }, [isHovered, currentIndex]);
 
   return (
-    <section
-      id="about"
-      ref={(el) => (sectionRefs.current.about = el)}
-      className="relative overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 md:px-10"
-      style={{
-        minHeight: "110vh",
-        background:
-          "radial-gradient(circle at center, rgba(50,50,50,1) 0%, rgba(5,5,5,1) 100%)",
-      }}
-    >
+  <section
+  id="about"
+  ref={(el) => (sectionRefs.current.about = el)}
+  className="relative overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 md:px-10 min-h-[110vh]"
+>
+  {/* 🔥 Background Video */}
+  {/* <video
+    src={bgvideo}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover opacity-[2%]"
+  /> */}
+
       {/* ✨ Background Pattern */}
       <GoldenParticles />
       <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -187,17 +193,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         </button>
       </div>
 
-      {/* 🌄 Bottom Decoration */}
- <div className="w-full flex mt-2 justify-end overflow-hidden leading-none">
-  <img
-    src={belowBg}
-    alt="Bottom Decoration"
-    className="
-      w-[220px] sm:w-[300px] md:w-[400px] lg:w-[500px]
-      h-auto object-cover opacity-90 transition-all duration-500
-    "
-  />
-</div>
+
 
 
     </section>

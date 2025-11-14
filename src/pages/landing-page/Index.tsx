@@ -98,6 +98,7 @@ const Index = () => {
       <Navigation />
       <SocialSidebar/>
       <main className="flex-1">
+        
         <HeroSection />
 
         {/* About Section */}
@@ -113,7 +114,6 @@ const Index = () => {
      sectionRefs={sectionRefs}
      visibleSections={visibleSections}
      />
-   <ConsultationSection/>
    <CustomerReviewsSection/>
         {/* Why Choose Us */}
   <WhyChooseSection

@@ -64,38 +64,24 @@ const Maps = () => {
           </div>
         </section>
 
-        {/* --- Buttons Section --- */}
-        <section className="py-10 bg-transparent">
-          <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-6">
-            <Button className="bg-gold text-black font-semibold px-8 py-4 shadow-md hover:bg-yellow-400 transition-all duration-300 rounded-none">
-              Explore Noida Maps
-            </Button>
-
-            <Button className="bg-gold text-black font-semibold px-8 py-4 shadow-md hover:bg-yellow-400 transition-all duration-300 rounded-none">
-              Explore Greater Noida Maps
-            </Button>
-
-            <Button className="bg-gold text-black font-semibold px-8 py-4 shadow-md hover:bg-yellow-400 transition-all duration-300 rounded-none">
-              Explore Yamuna Expressway Maps
-            </Button>
-          </div>
-        </section>
 
         {/* --- Highlight Section --- */}
+        <div className="flex flex-row justify-around items-center">
         <HighlightSection
           title="Greater Noida Maps"
           description="Navigate the City’s Sectors and Zones"
           image={sampleImg}
-          imageDesc="At Noida Property Solution, we provide a detailed map of Greater Noida to help you navigate this growing city. Our sector-wise layouts provide clear views of residential, commercial, and industrial zones, making it easier to find the best property. Whether you are looking for new developments or established communities, our map guides you through Greater Noida real estate. Find important locations and unlock the full potential of Greater Noida with Noida Property Solution."
+   
           onExplore={() => navigate("/maps/greaternoida")}
         />
            <HighlightSection
           title="Yamuna Expressway Maps"
           description="Navigate the Area's Sectors and Zones"
           image={sampleImg2}
-          imageDesc="We offers an in depth map of the Yamuna Expressway Industrial Development Authority (YEIDA) to help you navigate this speedy-developing business area. Our maps show neighborhood shape, highlighting business, residential, and industrial districts that will help you find used homes. Whether you’re seeking out new tendencies or constructed-up areas, our map can speedy take you thru the YEIDA actual property scene. Increase your chances through securing luxurious places with Noida Property Solution."
+         
           onExplore={() => navigate("/maps/yamunaexpressway")}
         />
+        </div>
       </main>
 
       <Footer />

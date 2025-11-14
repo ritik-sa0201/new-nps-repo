@@ -5,32 +5,32 @@ const teamMembers = [
   {
     name: "Mr. T. Chandra",
     role: "Founder & Managing Director",
-    image: "https://randomuser.me/api/portraits/men/15.jpg",
+    image: "https://static.vecteezy.com/system/resources/thumbnails/048/818/198/small/confident-young-man-smiling-amongst-autumn-leaves-in-a-sunlit-park-photo.jpeg",
   },
   {
     name: "Priya Mehta",
     role: "Co-Founder & Operations Head",
-    image: "https://randomuser.me/api/portraits/women/24.jpg",
+    image: "https://thumbs.dreamstime.com/b/indian-women-15573084.jpg",
   },
   {
     name: "Sushil Kumar",
     role: "Senior Property Consultant",
-    image: "https://randomuser.me/api/portraits/men/33.jpg",
+    image: "https://static.vecteezy.com/system/resources/thumbnails/049/174/246/small/a-smiling-young-indian-man-with-formal-shirts-outdoors-photo.jpg",
   },
   {
     name: "Harsh Garg",
     role: "Marketing Lead",
-    image: "https://randomuser.me/api/portraits/men/54.jpg",
+    image: "https://www.kalkifashion.com/blogs/wp-content/uploads/2023/11/Evolution_of_Indian_Mens_Ethnic_Wear_From_Tradition_to_Trendy.jpg",
   },
   {
     name: "Gaurav Marothiya",
     role: "Client Relations Manager",
-    image: "https://randomuser.me/api/portraits/men/44.jpg",
+    image: "https://cdn.pixabay.com/photo/2022/03/11/06/14/indian-man-7061278_1280.jpg",
   },
   {
     name: "Rahul Singh",
     role: "Legal Advisor",
-    image: "https://randomuser.me/api/portraits/men/62.jpg",
+    image: "https://img.freepik.com/free-photo/front-view-indian-man-posing-studio_23-2150692695.jpg?semt=ais_hybrid&w=740&q=80",
   },
 ];
 
