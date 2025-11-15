@@ -116,7 +116,7 @@ const Navigation = () => {
             <img
               src={FINAL_LOGO}
               alt="NPS Logo"
-              className={`h-32 sm:h-40 w-auto transition-transform duration-300 ${
+              className={`h-32 sm:h-35 w-auto transition-transform duration-300 ${
                 isSticky ? "scale-90" : "scale-100"
               }`}
             />
@@ -125,19 +125,26 @@ const Navigation = () => {
           {/* RIGHT SIDE */}
           <div className="flex flex-col items-end space-y-4">
             {/* TOP ROW: phone + login */}
-            <div className="flex items-center space-x-4">
-              <div className="flex flex-row gap-2 items-center font-bold px-6 py-2 text-white">
-                <PhoneIcon size={40} className="translate-y-1" />
-                <p className="text-4xl sm:text-5xl">+91 93119 31770</p>
-              </div>
+<div className="flex flex-row w-full items-start justify-end gap-6">
 
-              <Link to={user?.fullName ? "/logout" : "/login"}>
-                <div className="flex flex-row gap-2 items-center font-bold px-6 py-2 text-white hover:scale-105 transition">
-                  <User2Icon size={40} />
-                  <span className="text-2xl sm:text-4xl">{user?.fullName ? "Logout" : "Login"}</span>
-                </div>
-              </Link>
-            </div>
+  {/* PHONE LEFT */}
+  <div className="flex flex-row gap-2 items-center font-bold text-white leading-none">
+    <PhoneIcon size={25} className="mt-[2px]" /> 
+    <p className="text-2xl sm:text-3xl leading-none">+91 93119 31770</p>
+  </div>
+
+  {/* LOGIN RIGHT */}
+  <Link to={user?.fullName ? "/logout" : "/login"}>
+    <div className="flex flex-row gap-2 items-center font-bold text-white leading-none hover:scale-105 transition">
+      <User2Icon size={20} className="mt-[2px]" />
+      <span className="text-xl sm:text-2xl leading-none">
+        {user?.fullName ? "Logout" : "Login"}
+      </span>
+    </div>
+  </Link>
+
+</div>
+
 
             {/* BOTTOM ROW: nav links */}
             <div className="flex items-center space-x-8">

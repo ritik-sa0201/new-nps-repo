@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SocialSidebar from "@/components/socialSidebar";
-import bg1 from "@/assets/coverimg.jpg";
+import bg1 from "@/assets/bgp1.jpg";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import comingSoonImg from "@/assets/comingsoon.jpg"; // replace with any relevant image
@@ -32,23 +32,26 @@ const ComingSoon = () => {
         />
       </div>
         {/* --- Header Section --- */}
-        <section
-          className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${bg1})` }}
-        >
-          <div className="absolute inset-0" />
-          <div className="container relative z-10 mx-auto px-4 flex flex-col justify-center items-center text-center">
-            <h1 className="font-serif text-white text-6xl md:text-5xl font-bold mb-4">
-              New Launches by{" "}
-              <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
-                Noida Property Solution
-              </span>
-            </h1>
-            <p className="text-xl text-white max-w-3xl">
-              Plan with Ease: Explore Our New Launches!
-            </p>
-          </div>
-        </section>
+   <section
+  className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: `url(${bg1})` }}
+>
+  {/* 🔥 Dark overlay to dim the background image */}
+  <div className="absolute inset-0 bg-black/50"></div>
+  {/* Adjust: bg-black/40 (lighter), bg-black/60 (darker) */}
+
+  <div className="container relative z-10 mx-auto px-4 flex flex-col justify-center items-center text-center">
+    <h1 className="font-serif text-white text-6xl md:text-5xl font-bold mb-4">
+      New Launches by{" "}
+      <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+        Noida Property Solution
+      </span>
+    </h1>
+    <p className="text-xl text-white max-w-3xl">
+      Plan with Ease: Explore Our New Launches!
+    </p>
+  </div>
+</section>
 
         {/* --- Coming Soon Section --- */}
         <section className="py-24  text-white">

@@ -6,7 +6,7 @@ import StatsSection from "./stats";
 import TeamSection from "./team";
 import WordsFromFounders from "./founders";
 import SocialSidebar from "@/components/socialSidebar";
-import bg1 from "@/assets/coverimg.jpg";
+import bg1 from "@/assets/about.jpg";
 import bgvideo from "@/assets/bgvideo.mp4";
 
 const About = () => {

@@ -4,7 +4,7 @@ import PropertyCard from "@/components/PropertyCard";
 import heroImage from "@/assets/hero-luxury-apartments.jpg";
 import studioImage from "@/assets/studio-apartment.jpg";
 import SocialSidebar from "@/components/socialSidebar";
-import bg1 from "@/assets/coverimg.jpg";
+import bg1 from "@/assets/bgp1.jpg";
 import belowBg from "@/assets/belowwbg.png";
 import bgvideo from "@/assets/bgvideo.mp4";
 const ProjectsNoida = () => {
@@ -61,19 +61,27 @@ const ProjectsNoida = () => {
       </div>
 
         {/* Header */}
-        <section
-        className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bg1})` }}
-        >
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="font-serif text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-            Our Properties in <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">Noida</span>
-            </h1>
-            <p className="text-lg text-white max-w-2xl mx-auto">
-              Discover premium residential and commercial spaces in Noida
-            </p>
-          </div>
-        </section>
+<section
+  className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: `url(${bg1})` }}
+>
+  {/* 🔥 DARK OVERLAY TO LOWER BACKGROUND OPACITY */}
+  <div className="absolute inset-0 bg-black/50"></div>
+  {/* Change 50 to 30/60/70 for lighter/darker effect */}
+
+  <div className="relative container mx-auto px-4 text-center">
+    <h1 className="font-serif text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+      Our Properties in{" "}
+      <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+        Noida
+      </span>
+    </h1>
+
+    <p className="text-lg text-white max-w-2xl mx-auto">
+      Discover premium residential and commercial spaces in Noida
+    </p>
+  </div>
+</section>
 
         {/* Overview */}
         <section className="py-12 ">

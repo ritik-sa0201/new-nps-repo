@@ -11,7 +11,7 @@ import villaImage from "@/assets/luxury-villa.jpg";
 import studioImage from "@/assets/studio-apartment.jpg";
 import heroImage from "@/assets/hero-luxury-apartments.jpg";
 import SocialSidebar from "@/components/socialSidebar";
-import bg1 from "@/assets/coverimg.jpg";
+import bg1 from "@/assets/bgp1.jpg";
 import bgvideo from "@/assets/bgvideo.mp4";
 
 const Properties = () => {
@@ -190,19 +190,26 @@ const Properties = () => {
       <SocialSidebar/>
       <main className="flex-1">
         {/* Header */}
-        <section
-        className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bg1})` }}
-        >
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="font-serif text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-            Explore Our <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">Properties</span>
-            </h1>
-            <p className="text-lg text-white max-w-2xl mx-auto">
-            Find your perfect property from our extensive collection
-            </p>
-          </div>
-        </section>
+    <section
+  className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: `url(${bg1})` }}
+>
+  {/* 🔥 DARK OVERLAY WITH CUSTOM OPACITY */}
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  <div className="relative container mx-auto px-4 text-center">
+    <h1 className="font-serif text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+      Explore Our{" "}
+      <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+        Properties
+      </span>
+    </h1>
+    <p className="text-lg text-white max-w-2xl mx-auto">
+      Find your perfect property from our extensive collection
+    </p>
+  </div>
+</section>
+
 
         {/* Filters */}
       {/* Filters */}

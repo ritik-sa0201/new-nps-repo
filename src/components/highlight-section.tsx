@@ -7,6 +7,7 @@ interface HighlightSectionProps {
   image: string;
   imageDesc?: string;
   onExplore?: () => void;
+  comingSoon?: boolean;   // ⭐ NEW PROP
 }
 
 const HighlightSection: React.FC<HighlightSectionProps> = ({
@@ -14,6 +15,7 @@ const HighlightSection: React.FC<HighlightSectionProps> = ({
   description,
   image,
   onExplore,
+  comingSoon = false,
 }) => {
   return (
     <section className="relative w-full flex flex-col items-center overflow-hidden bg-transparent">
@@ -29,21 +31,26 @@ const HighlightSection: React.FC<HighlightSectionProps> = ({
         {/* Image */}
         <div className="w-full h-56 sm:h-64 md:h-72 border-4 border-gold overflow-hidden shadow-[0_0_20px_rgba(255,215,0,0.2)] mb-4 rounded-md">
           <img
+          onClick={onExplore}
             src={image}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.05]"
+            className="w-full h-full object-fit transition-transform duration-500 hover:scale-[1.05]"
           />
         </div>
 
-        {/* Description (Optional later if needed) */}
-        {/* <p className="text-white/80 text-sm sm:text-base mb-3">{description}</p> */}
-
-        {/* 🚀 Explore Button */}
+        {/* 🚀 Button */}
         <Button
-          onClick={onExplore}
-          className="bg-gold text-black font-semibold w-full py-3 rounded-none shadow-md hover:bg-yellow-400 transition-all duration-300"
+          onClick={comingSoon ? undefined : onExplore}
+          disabled={comingSoon}
+          className={`
+            w-full py-3 rounded-none text-lg font-bold shadow-md transition-all duration-300
+            ${comingSoon
+              ? "bg-gray-500 text-white cursor-not-allowed opacity-70"
+              : "bg-gold text-black hover:bg-yellow-400"
+            }
+          `}
         >
-          Explore More
+          {comingSoon ? "Coming Soon" : "Explore More"}
         </Button>
 
       </div>

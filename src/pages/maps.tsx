@@ -103,6 +103,13 @@ const Maps = () => {
             description="Navigate the City’s Sectors and Zones"
             image={sampleImg}
             onExplore={() => navigate("/maps/greaternoida")}
+            comingSoon={false}
+          />
+          <HighlightSection
+            title="Noida Maps"
+            description="Navigate the City’s Sectors and Zones"
+            image={sampleImg}
+            comingSoon={true}
           />
 
           <HighlightSection
@@ -110,6 +117,7 @@ const Maps = () => {
             description="Navigate the Area's Sectors and Zones"
             image={sampleImg2}
             onExplore={() => navigate("/maps/yamunaexpressway")}
+            comingSoon={false}
           />
         </div>
       </main>

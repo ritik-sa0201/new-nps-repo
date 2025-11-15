@@ -69,9 +69,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["MyFont","Manrope","Montserrat", "Inter", "system-ui", "sans-serif"],
-        serif: [" MyFont","Manrope","Montserrat","Manrope","Playfair Display", "Georgia", "serif"],
-        display: [" MyFont","Manrope","Montserrat","Manrope","Playfair Display", "serif"], // ✅ Added from first config
+        sans: ["Urbanist","MyFont","Manrope","Montserrat", "Inter", "system-ui", "sans-serif"],
+        serif: ["Urbanist"," MyFont","Manrope","Montserrat","Manrope","Playfair Display", "Georgia", "serif"],
+        display: ["Urbanist"," MyFont","Manrope","Montserrat","Manrope","Playfair Display", "serif"], // ✅ Added from first config
       },
       borderRadius: {
         lg: "var(--radius)",

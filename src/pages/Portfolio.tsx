@@ -6,7 +6,7 @@ import villaImage from "@/assets/luxury-villa.jpg";
 import heroImage from "@/assets/hero-luxury-apartments.jpg";
 import { useEffect, useState } from "react";
 import SocialSidebar from "@/components/socialSidebar";
-import bg1 from "@/assets/coverimg.jpg";
+import bg1 from "@/assets/bgp1.jpg";
 import belowBg from "@/assets/belowwbg.png";
 import bgvideo from "@/assets/bgvideo.mp4";
 const Portfolio = () => {
@@ -63,19 +63,28 @@ const Portfolio = () => {
       }}
       >
         {/* Header */}
-        <section
-        className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bg1})` }}
-        >
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="font-serif text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-              Our <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">Portfolio</span>
-            </h1>
-            <p className="text-lg text-white max-w-2xl mx-auto">
-              Showcasing our successful projects across the region
-            </p>
-          </div>
-        </section>
+  <section
+  className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: `url(${bg1})` }}
+>
+  {/* 🔥 Dark overlay to reduce background image opacity */}
+  <div className="absolute inset-0 bg-black/50"></div>
+  {/* Change to bg-black/40 or bg-black/60 depending on how dark you want */}
+
+  <div className="relative container mx-auto px-4 text-center">
+    <h1 className="font-serif text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+      Our{" "}
+      <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+        Portfolio
+      </span>
+    </h1>
+
+    <p className="text-lg text-white max-w-2xl mx-auto">
+      Showcasing our successful projects across the region
+    </p>
+  </div>
+</section>
+
 
         {/* Introduction */}`
         <section className="py-12 ">

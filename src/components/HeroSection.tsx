@@ -8,11 +8,11 @@ import icon6 from "@/assets/icon6.png";
 import icon7 from "@/assets/icon7.png";
 
 import bg1 from "@/assets/bg/1.jpg";
-import bg2 from "@/assets/bg/7.jpg";
 import bg3 from "@/assets/bg/8.jpg";
 import bg4 from "@/assets/bg/3.jpg";
 import bg5 from "@/assets/bg/2.jpg";
 import bg6 from "@/assets/bg/5.jpg";
+import { P } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
 
 
 const HeroSection = () => {
@@ -20,7 +20,7 @@ const HeroSection = () => {
   const [currentBg, setCurrentBg] = useState(0);
   const navigate = useNavigate();
 
-  const bgImages = [bg1, bg2, bg3,bg4,bg5,bg6];
+  const bgImages = [bg1, bg3,bg4,bg5,bg6];
 
   // 🔁 Background auto-change
   useEffect(() => {
@@ -78,18 +78,32 @@ const HeroSection = () => {
        
       >
         {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="font-serif text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-3 sm:mb-4"
-        >
-          Find Your Dream Place
-          <br />
-          <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
-            In Noida Region
-          </span>
-        </motion.h1>
+    <motion.h1
+  initial={{ opacity: 0, y: -40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="font-serif text-center flex flex-col items-center"
+>
+  {/* Small top line */}
+  <div className="flex flex-row gap-2 items-center justify-center">
+  <p className=" text-3xl sm:text-4xl md:text-7xl font-semibold text-white mb-2">
+    Unlock Noida Living
+  </p>
+     <p className="translate-y-1 text-xl sm:text-3xl md:text-4xl font-semibold text-white mb-2">with</p>
+  </div>
+
+  {/* Big one-line highlight text */}
+  <span className="
+    text-3xl sm:text-5xl md:text-7xl font-extrabold 
+    whitespace-nowrap 
+    bg-gradient-to-r from-gold to-yellow-300 
+    bg-clip-text text-transparent 
+    animate-shimmer bg-[length:200%_100%]
+  ">
+    NOIDA PROPERTY SOLUTIONS
+  </span>
+</motion.h1>
+
 
         {/* Logo + Phone (side-by-side always) */}
         <motion.div

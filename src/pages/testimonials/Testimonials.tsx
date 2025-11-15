@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import StatsSection from "../about-us/stats";
 import { InstagramEmbed } from "react-social-media-embed";
-import bg1 from "@/assets/coverimg.jpg";
+import bg1 from "@/assets/testi.jpg";
 import belowBg from "@/assets/belowwbg.png";
 import SocialSidebar from "@/components/socialSidebar";
 import bgvideo from "@/assets/bgvideo.mp4";

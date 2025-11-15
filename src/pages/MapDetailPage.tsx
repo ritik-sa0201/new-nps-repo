@@ -98,7 +98,7 @@ const MapDetailPage: React.FC = () => {
   <img
     src={belowBg}
     alt="Bottom Decoration"
-    className="w-[350px] md:w-[500px] h-auto object-cover opacity-90"
+    className="w-full h-auto object-cover opacity-90"
   />
 </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import logo from "@/assets/NPS.png";
-import bg1 from "@/assets/pic4.jpg";
+import bg1 from "@/assets/pic2.jpg";
 import bg2 from "@/assets/pic1.jpg";
 import GoldenParticles from "@/components/golden-particles";
 import belowBg from "@/assets/belowwbg.png";
