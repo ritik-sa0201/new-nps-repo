@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import bgvideo from "@/assets/bgvideo.mp4";
+
 const ConsultationSection: React.FC = () => {
   const navigate = useNavigate();
 
@@ -11,15 +11,6 @@ const ConsultationSection: React.FC = () => {
                  bg-black text-white transition-all duration-500"
       style={{ minHeight: "30vh" }}
     >
-         <video
-          src={bgvideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-        />
-      
       {/* 🟡 Left: Golden Heading */}
       <div className="flex-1 text-center md:text-left">
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 

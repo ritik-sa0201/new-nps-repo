@@ -6,7 +6,7 @@ import { InstagramEmbed } from "react-social-media-embed";
 import bg1 from "@/assets/coverimg.jpg";
 import belowBg from "@/assets/belowwbg.png";
 import SocialSidebar from "@/components/socialSidebar";
-
+import bgvideo from "@/assets/bgvideo.mp4";
 const Testimonials: React.FC = () => {
   // Dummy Instagram Reels URLs (replace with your real reels)
   const reels = [
@@ -22,10 +22,20 @@ const Testimonials: React.FC = () => {
     <div className="min-h-screen flex flex-col"
      style={{
         minHeight: "120vh",
-        background:
-          "radial-gradient(circle at center, rgba(50,50,50,1) 0%, rgba(5,5,5,1) 100%)",
+      
       }}
     >
+        <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+
       <Navigation />
       <SocialSidebar/>
       <main className="flex-1"
@@ -47,7 +57,7 @@ const Testimonials: React.FC = () => {
         </section>
 
         {/* Instagram Reels Section */}
-        <section className="py-16 bg-background">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto mb-12 text-center">
               <p className="text-lg text-muted-foreground">
@@ -82,7 +92,7 @@ const Testimonials: React.FC = () => {
   <img
     src={belowBg}
     alt="Bottom Decoration"
-    className="w-[350px] md:w-[500px] h-auto object-cover opacity-90"
+    className="w-full h-auto object-cover opacity-90"
   />
 </div>
       </main>

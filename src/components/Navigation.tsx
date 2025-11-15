@@ -1,24 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, PhoneIcon, User2Icon, X } from "lucide-react";
+import { Menu, PhoneIcon, User2Icon, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import FINAL_LOGO from "@/assets/NPS.png";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { ChevronDown } from "lucide-react";
-
+import bgvideo from "@/assets/bgvideo.mp4";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isSticky, setIsSticky] = useState(false);
   const location = useLocation();
   const { data: user } = useAuth();
 
@@ -26,10 +18,15 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.scrollY > 50) setIsSticky(true);
+      else setIsSticky(false);
+
       if (window.scrollY > lastScrollY) setShowNavbar(false);
       else setShowNavbar(true);
+
       setLastScrollY(window.scrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
@@ -47,22 +44,43 @@ const Navigation = () => {
     { name: "Greater Noida", desc: "Modern developments in Greater Noida", link: "/projects/greater-noida" },
     { name: "Yamuna Expressway", desc: "Luxury estates on Yamuna Expressway", link: "/projects/yamuna" },
     { name: "All Properties", desc: "Browse all properties", link: "/properties" },
-    { name: "Under Construction", desc: "Explore under construction", link: "/comingsoon" },
+    { name: "New Launches", desc: "Explore our new launches", link: "/comingsoon" },
   ];
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      } ${
-        location.pathname === "/"
-          ? "bg-transparent"
-          : "bg-black/50 border-b border-gold/20 shadow-[0_0_20px_rgba(255,215,0,0.15)]"
-      }`}
-    >
-      <div className="container mx-auto px-4">
+ <nav
+  className={`
+    w-full z-50 transition-all duration-500
 
-        {/* ================= MOBILE LOGO (BIGGER) ================= */}
+    ${location.pathname === "/" 
+      ? "absolute top-0 left-0"      /* Homepage: overlay */ 
+      : isSticky 
+        ? "fixed top-0"              /* Other pages: sticky after scroll */ 
+        : "relative"}                /* Other pages: normal before scroll */
+
+    ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+  `}
+>
+
+
+      {/* 🔥 VIDEO BACKGROUND */}
+     {location.pathname !='/' &&
+      <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-30"
+        />
+      </div>
+}
+
+      {/* NAV CONTENT */}
+      <div className="relative z-10 container mx-auto px-4">
+
+        {/* ================= MOBILE LOGO ================= */}
         <div className="flex lg:hidden justify-center py-3">
           <Link to="/">
             <img
@@ -81,7 +99,9 @@ const Navigation = () => {
             <img
               src={FINAL_LOGO}
               alt="NPS Logo"
-              className="h-32 sm:h-40 md:h-40 w-auto transition-transform duration-300 hover:scale-105 drop-shadow-[0_0_25px_rgba(255,215,0,0.3)]"
+              className={`h-32 sm:h-40 w-auto transition-transform duration-300 hover:scale-105 ${
+                isSticky ? "scale-90" : ""
+              } drop-shadow-[0_0_25px_rgba(255,215,0,0.3)]`}
             />
           </Link>
 
@@ -92,16 +112,14 @@ const Navigation = () => {
             <div className="flex items-center space-x-4">
 
               {/* PHONE */}
-              <div className="flex flex-row gap-2 items-center justify-center font-bold drop-shadow-lg px-6 py-2 text-base text-white">
+              <div className="flex flex-row gap-2 items-center font-bold px-6 py-2 text-base text-white">
                 <PhoneIcon size={40} className="translate-y-1" />
                 <p className="text-5xl">+91 93119 31770</p>
               </div>
 
               {/* LOGIN */}
               <Link to={user?.fullName ? "/logout" : "/login"}>
-                <div
-                  className="flex flex-row gap-2 items-center justify-center font-bold drop-shadow-lg px-6 py-2 text-base text-white hover:cursor-pointer hover:scale-105 transition-transform duration-300"
-                >
+                <div className="flex flex-row gap-2 items-center font-bold px-6 py-2 text-white hover:scale-105 transition">
                   <User2Icon size={40} />
                   <span className="text-4xl">{user?.fullName ? "Logout" : "Login"}</span>
                 </div>
@@ -116,66 +134,50 @@ const Navigation = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-base font-bold transition-colors hover:text-gold ${
-                    isActive(item.path) ? "text-gold" : "text-foreground"
+                  className={`text-base font-bold hover:text-gold transition ${
+                    isActive(item.path) ? "text-gold" : "text-white"
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
 
-              {/* PROJECTS DROPDOWN — FIXED OPEN LEFT */}
-   {/* PROJECTS DROPDOWN — NORMAL DIV (EXPANDS LEFT) */}
-                      <div className="relative group">
-  <button className="text-base font-bold flex flex-row items-center gap-2">
-    <p>Projects</p>
-    <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-  </button>
+              {/* PROJECTS DROPDOWN */}
+              <div className="relative group">
+                <button className="text-base font-bold flex items-center gap-2 text-white">
+                  <p>Projects</p>
+                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition" />
+                </button>
 
-  {/* DROPDOWN CONTENT OPENS LEFT */}
-  <div
-    className="
-      absolute 
-      top-full 
-      right-0 
-      translate-x-[-2%]
-      mt-3
-      w-[500px]
-      grid grid-cols-2
-      gap-3
-      bg-[rgba(25,25,25,0.95)]
-      border border-gold/20 
-      rounded-xl 
-      shadow-xl
-      p-4
-
-      opacity-0 
-      pointer-events-none
-      group-hover:opacity-100 
-      group-hover:pointer-events-auto
-      transition-all duration-300
-      z-50
-    "
-  >
-    {projectLinks.map((item) => (
-      <Link
-        key={item.name}
-        to={item.link}
-        className="block space-y-1 rounded-md p-3 leading-none transition-colors hover:bg-gold/10"
-      >
-        <div className="text-base font-semibold text-gold">{item.name}</div>
-        <p className="text-sm text-muted-foreground">{item.desc}</p>
-      </Link>
-    ))}
-  </div>
-</div>
-
+                <div
+                  className="
+                    absolute top-full right-0 translate-x-[-2%] mt-3
+                    w-[500px] grid grid-cols-2 gap-3
+                    bg-[rgba(25,25,25,0.95)]
+                    border border-gold/20 rounded-xl shadow-xl p-4
+                    opacity-0 pointer-events-none
+                    group-hover:opacity-100 group-hover:pointer-events-auto
+                    transition-all duration-300 z-50
+                  "
+                >
+                  {projectLinks.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.link}
+                      className="block space-y-1 rounded-md p-3 hover:bg-gold/10"
+                    >
+                      <div className="text-base font-semibold text-gold">{item.name}</div>
+                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
               {/* CONTACT */}
               <Link
                 to="/contact"
-                className={`text-base font-bold transition-colors hover:text-gold ${
-                  isActive("/contact") ? "text-gold" : "text-foreground"
+                className={`text-base font-bold hover:text-gold transition ${
+                  isActive("/contact") ? "text-gold" : "text-white"
                 }`}
               >
                 Contact Us
@@ -201,7 +203,7 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block py-2 transition-colors hover:text-gold ${
+                className={`block py-2 hover:text-gold ${
                   isActive(item.path) ? "text-gold" : "text-white"
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -217,7 +219,7 @@ const Navigation = () => {
                   <li key={item.link}>
                     <Link
                       to={item.link}
-                      className="block text-sm text-muted-foreground hover:text-gold transition"
+                      className="block text-sm text-muted-foreground hover:text-gold"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -230,7 +232,7 @@ const Navigation = () => {
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className={`block py-2 transition-colors hover:text-gold ${
+              className={`block py-2 hover:text-gold ${
                 isActive("/contact") ? "text-gold" : "text-white"
               }`}
             >

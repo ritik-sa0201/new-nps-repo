@@ -1,9 +1,8 @@
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
 import icon8 from "@/assets/icon8.png";
 import icon9 from "@/assets/icon9.png";
-import bgvideo from "@/assets/bgvideo.mp4";
 import icon10 from "@/assets/icon10.png";
+import belowBg from "@/assets/belowwbg.png";
 interface WhyChooseSectionProps {
   visibleSections: Set<string>;
   sectionRefs: React.MutableRefObject<Record<string, HTMLElement | null>>;
@@ -37,14 +36,7 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
       ref={(el) => (sectionRefs.current["why-choose"] = el)}
       className="relative py-24 text-white overflow-hidden"
     >
-         <video
-          src={bgvideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-        />
+
       {/* Floating Gold Glows */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-24 left-12 w-72 h-72 bg-gold/60 rounded-full blur-3xl animate-pulse-slow" />
@@ -115,6 +107,16 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
           ))}
         </div>
       </div>
+           <div className="w-full flex mt-2 justify-end overflow-hidden leading-none">
+  <img
+    src={belowBg}
+    alt="Bottom Decoration"
+    className="
+      w-full
+      h-auto object-cover opacity-90 transition-all duration-500
+    "
+  />
+</div>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckCircle, Star } from "lucide-react";
-import bgvideo from "@/assets/bgvideo.mp4";
+
 interface Review {
   name: string;
   text: string;
@@ -33,19 +33,9 @@ const CustomerReviewsSection: React.FC = () => {
   return (
     <section
       className="relative flex flex-col items-center justify-center text-center py-24 px-6 md:px-16 overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(circle at center, rgba(20,20,20,1) 0%, rgba(5,5,5,1) 100%)",
-      }}
+      
     >
-        <video
-          src={bgvideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-        />
+   
       {/* 🌟 Background pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div

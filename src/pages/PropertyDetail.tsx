@@ -11,6 +11,7 @@ import SocialSidebar from "@/components/socialSidebar";
 import { useAuth } from "@/hooks/useAuth";
 import { useCreateQuery } from "@/hooks/use-query";
 import { useContactInfo } from "@/api/contactApi";
+import bgvideo from "@/assets/bgvideo.mp4";
 
 // 📸 Mock Images
 import heroImage from "@/assets/hero-luxury-apartments.jpg";
@@ -134,7 +135,18 @@ const PropertyDetail = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col text-foreground">
+        <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+
       <Navigation />
       <SocialSidebar />
 

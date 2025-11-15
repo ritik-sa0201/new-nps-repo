@@ -4,15 +4,26 @@ import Footer from "@/components/Footer";
 import SocialSidebar from "@/components/socialSidebar";
 import bg1 from "@/assets/map2.jpg";
 import MapsGallery from "./mapsGallery2";
+import bgvideo from "@/assets/bgvideo.mp4";
+
 const YamunaMaps: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col"
      style={{
         minHeight: "120vh",
-        background:
-          "radial-gradient(circle at center, rgba(50,50,50,1) 0%, rgba(5,5,5,1) 100%)",
       }}
     >
+        <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+
       <Navigation />
       <SocialSidebar />
       <main className="flex-1">

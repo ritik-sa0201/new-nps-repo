@@ -11,9 +11,6 @@ const OurCoreValues: React.FC = () => {
       className="relative py-20 overflow-hidden text-white"
     
     >
-      {/* ✨ Floating Golden Particles */}
-      <GoldenParticles />
-
       <div className="container mx-auto px-4 relative z-10">
         {/* Heading */}
         <div className="text-center mb-16">
@@ -89,7 +86,7 @@ const OurCoreValues: React.FC = () => {
     src={belowBg}
     alt="Bottom Decoration"
     className="
-      w-[220px] sm:w-[300px] md:w-[400px] lg:w-[500px]
+      w-full
       h-auto object-cover opacity-90 transition-all duration-500
     "
   />

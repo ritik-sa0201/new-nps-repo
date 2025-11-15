@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import SocialSidebar from "@/components/socialSidebar";
 import bg1 from "@/assets/coverimg.jpg";
 import belowBg from "@/assets/belowwbg.png";
-
+import bgvideo from "@/assets/bgvideo.mp4";
 const Portfolio = () => {
   const projects = [
     { id: 1, image: heroImage, title: "Green Valley Residences", location: "Sector 137, Noida", description: "Premium gated community with 200+ luxury apartments", status: "Completed" },
@@ -43,13 +43,23 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+        <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+
       <Navigation />
       <SocialSidebar/>
       <main className="flex-1"
        style={{
         minHeight: "120vh",
-        background:
-          "radial-gradient(circle at center, rgba(50,50,50,1) 0%, rgba(5,5,5,1) 100%)",
+       
       }}
       >
         {/* Header */}
@@ -144,7 +154,7 @@ const Portfolio = () => {
   <img
     src={belowBg}
     alt="Bottom Decoration"
-    className="w-[350px] md:w-[500px] h-auto object-cover opacity-90"
+    className="w-full h-auto object-cover opacity-90"
   />
 </div>
       </main>

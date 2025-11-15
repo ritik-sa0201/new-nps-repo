@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import bgvideo from "@/assets/bgvideo.mp4";
+
 interface CTASectionProps {
   visibleSections: Set<string>;
   sectionRefs: React.MutableRefObject<Record<string, HTMLElement | null>>;
@@ -13,18 +13,10 @@ const CTASection: React.FC<CTASectionProps> = ({ visibleSections, sectionRefs })
     <section
       id="cta"
       ref={(el) => (sectionRefs.current.cta = el)}
-      className="relative overflow-hidden py-24 bg-black"  // 🔥 Clean background
+      className="relative overflow-hidden py-24 "  // 🔥 Clean background
     >
       {/* 🌟 Content */}
       <div className="container mx-auto px-6 text-center relative z-10">
-          <video
-          src={bgvideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-        />
         <div
           className={`max-w-3xl mx-auto transition-all duration-1000 ${
             visibleSections.has("cta")

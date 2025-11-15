@@ -12,7 +12,7 @@ import { useCreateQuery } from "@/hooks/use-query";
 import SocialSidebar from "@/components/socialSidebar";
 import bg1 from "@/assets/coverimg.jpg";
 import belowBg from "@/assets/belowwbg.png";
-
+import bgvideo from "@/assets/bgvideo.mp4";
 
 const ContactInfoCard = ({ icon, title, children }: any) => (
   <div className="flex items-start space-x-4 hover:bg-gold/5 p-4 rounded-xl transition-all duration-300">
@@ -92,6 +92,17 @@ const handleSubmit = async (e: React.FormEvent) => {
       <Navigation/>
       <SocialSidebar/>
       <main className="flex-1">
+          <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+
         {/* Header */}
        
 

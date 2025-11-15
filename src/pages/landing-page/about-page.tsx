@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import belowBg from "@/assets/belowwbg.png";
-import bgvideo from "@/assets/bgvideo.mp4";
-import GoldenParticles from "@/components/golden-particles";
+
 
 interface Benefit {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -52,18 +50,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   ref={(el) => (sectionRefs.current.about = el)}
   className="relative overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 md:px-10 min-h-[110vh]"
 >
-  {/* 🔥 Background Video */}
-  <video
-    src={bgvideo}
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute inset-0 w-full h-full object-cover opacity-80"
-  />
 
-      {/* ✨ Background Pattern */}
-      <GoldenParticles />
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div
           className="absolute inset-0"

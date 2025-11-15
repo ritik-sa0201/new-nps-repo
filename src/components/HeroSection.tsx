@@ -7,16 +7,20 @@ import icon5 from "@/assets/icon5.png";
 import icon6 from "@/assets/icon6.png";
 import icon7 from "@/assets/icon7.png";
 
-import bg1 from "@/assets/bg/4.jpg";
+import bg1 from "@/assets/bg/1.jpg";
 import bg2 from "@/assets/bg/7.jpg";
 import bg3 from "@/assets/bg/8.jpg";
+import bg4 from "@/assets/bg/3.jpg";
+import bg5 from "@/assets/bg/2.jpg";
+import bg6 from "@/assets/bg/5.jpg";
+
 
 const HeroSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentBg, setCurrentBg] = useState(0);
   const navigate = useNavigate();
 
-  const bgImages = [bg1, bg2, bg3];
+  const bgImages = [bg1, bg2, bg3,bg4,bg5,bg6];
 
   // 🔁 Background auto-change
   useEffect(() => {
@@ -67,20 +71,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/35 to-black/20" />
 
       {/* ✨ Floating particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-gold/30 rounded-full animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
-            }}
-          />
-        ))}
-      </div>
+      
 
       {/* 🌟 Main Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl w-full flex flex-col items-center "

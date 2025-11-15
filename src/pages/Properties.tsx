@@ -12,6 +12,7 @@ import studioImage from "@/assets/studio-apartment.jpg";
 import heroImage from "@/assets/hero-luxury-apartments.jpg";
 import SocialSidebar from "@/components/socialSidebar";
 import bg1 from "@/assets/coverimg.jpg";
+import bgvideo from "@/assets/bgvideo.mp4";
 
 const Properties = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -174,6 +175,17 @@ const Properties = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+        <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+              <video
+                src={bgvideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover opacity-40"
+              />
+            </div>
+      
       <Navigation />
       <SocialSidebar/>
       <main className="flex-1">

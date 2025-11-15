@@ -13,7 +13,7 @@ import loginVector from "@/assets/login.jpg";
 import { useLogin, useRegister, useLogout, useAuth } from "@/hooks/useAuth";
 import { Eye, EyeOff } from "lucide-react"; // ⭐ NEW
 import SocialSidebar from "@/components/socialSidebar";
-
+import bgvideo from "@/assets/bgvideo.mp4";
 // --- Validation Schemas ---
 const loginSchema = z.object({
   email: z.string().email({ message: "Invalid email" }),
@@ -88,7 +88,18 @@ const Login = () => {
       <Navigation />
       <SocialSidebar/>
 
-      <main className="flex-1 bg-muted/30 py-16">
+      <main className="flex-1 py-16">
+          <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 max-w-5xl mx-auto">
             {/* Left: Vector Image */}

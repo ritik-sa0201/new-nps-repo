@@ -1,5 +1,5 @@
 import React from "react";
-
+import belowBg from "@/assets/belowwbg.png";
 const founders = [
   {
     name: "Mr T  Chandra",
@@ -61,6 +61,16 @@ const WordsFromFounders: React.FC = () => {
           ))}
         </div>
       </div>
+           <div className="w-full flex mt-2 justify-end overflow-hidden leading-none">
+  <img
+    src={belowBg}
+    alt="Bottom Decoration"
+    className="
+      w-full
+      h-auto object-cover opacity-90 transition-all duration-500
+    "
+  />
+</div>
     </section>
   );
 };

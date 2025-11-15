@@ -8,7 +8,7 @@ const StatsSection: React.FC = () => {
     
     >
       {/* ✨ Floating Golden Particles */}
-      <GoldenParticles />
+
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Heading */}

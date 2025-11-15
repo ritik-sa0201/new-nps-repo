@@ -6,20 +6,32 @@ import StatsSection from "./stats";
 import TeamSection from "./team";
 import WordsFromFounders from "./founders";
 import SocialSidebar from "@/components/socialSidebar";
-import bg1 from "@/assets/coverimg.jpg"; 
-import ConsultationSection from "../landing-page/consultation";
+import bg1 from "@/assets/coverimg.jpg";
+import bgvideo from "@/assets/bgvideo.mp4";
 
 const About = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+
       <Navigation />
       <SocialSidebar />
-      <main className="flex-1"
-       style={{
-        minHeight: "120vh",
-        background:
-          "radial-gradient(circle at center, rgba(50,50,50,1) 0%, rgba(5,5,5,1) 100%)",
-      }}
+
+      <main
+        className="flex-1"
+        style={{
+          minHeight: "120vh",
+          
+        }}
       >
         <section
           className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
@@ -42,15 +54,17 @@ const About = () => {
         {/* Company Overview */}
         <CompanyOverview />
 
-        {/* Values and Stats */}
+        {/* Values */}
         <OurCoreValues />
-        <StatsSection />
-        <ConsultationSection/>
 
-        {/* Team Section */}
+        {/* Stats */}
+        <StatsSection />
+
+        {/* Founders & Team */}
         <WordsFromFounders />
         <TeamSection />
       </main>
+
       <Footer />
     </div>
   );

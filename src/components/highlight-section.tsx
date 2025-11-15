@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import belowBg from "@/assets/belowwbg.png";
 
 interface HighlightSectionProps {
   title: string;
@@ -17,17 +16,18 @@ const HighlightSection: React.FC<HighlightSectionProps> = ({
   onExplore,
 }) => {
   return (
-    <section className="relative w-full flex flex-col items-center overflow-hidden bg-transparent mt-10">
+    <section className="relative w-full flex flex-col items-center overflow-hidden bg-transparent">
 
-      {/* Wrapper that controls width for title + desc + image + button */}
-      <div className="flex flex-col items-center w-60 md:w-72 text-center">
+      {/* Responsive Wrapper */}
+      <div className="flex flex-col items-center w-full sm:w-64 md:w-72 lg:w-80 text-center px-4">
 
         {/* 🌟 Title */}
-        <h2 className="text-xl md:text-xl font-bold text-gold mb-2 font-serif">
+        <h2 className="text-xl sm:text-2xl font-bold text-gold mb-3 font-serif">
           {title}
         </h2>
 
-        <div className="w-full h-60 md:h-72 border-4 border-gold overflow-hidden shadow-[0_0_20px_rgba(255,215,0,0.2)] mb-4">
+        {/* Image */}
+        <div className="w-full h-56 sm:h-64 md:h-72 border-4 border-gold overflow-hidden shadow-[0_0_20px_rgba(255,215,0,0.2)] mb-4 rounded-md">
           <img
             src={image}
             alt={title}
@@ -35,10 +35,13 @@ const HighlightSection: React.FC<HighlightSectionProps> = ({
           />
         </div>
 
+        {/* Description (Optional later if needed) */}
+        {/* <p className="text-white/80 text-sm sm:text-base mb-3">{description}</p> */}
+
         {/* 🚀 Explore Button */}
         <Button
           onClick={onExplore}
-          className="bg-gold text-black font-semibold w-full py-3 rounded-none shadow-md hover:bg-yellow-400 transition-all duration-300 mb-4"
+          className="bg-gold text-black font-semibold w-full py-3 rounded-none shadow-md hover:bg-yellow-400 transition-all duration-300"
         >
           Explore More
         </Button>

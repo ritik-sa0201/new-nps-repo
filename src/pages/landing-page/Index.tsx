@@ -2,10 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import PropertyCard from "@/components/PropertyCard";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Award, Users, Building2, TrendingUp, Star, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Award, Users, Building2, TrendingUp } from "lucide-react";
 import commercialImage from "@/assets/commercial-property.jpg";
 import villaImage from "@/assets/luxury-villa.jpg";
 import studioImage from "@/assets/studio-apartment.jpg";
@@ -15,8 +12,8 @@ import PropertiesSection from "./featured-page";
 import WhyChooseSection from "./why-choose-us";
 import CTASection from "./cta";
 import SocialSidebar from "@/components/socialSidebar";
-import ConsultationSection from "./consultation";
 import CustomerReviewsSection from "./customer-review";
+import bgvideo from "@/assets/bgvideo.mp4";
 
 const Index = () => {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
@@ -94,37 +91,51 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col ">
+    <div className="min-h-screen flex flex-col relative">
+
+      {/* 🔥 FULL PAGE VIDEO BACKGROUND */}
+      <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-30"
+        />
+      </div>
+
       <Navigation />
       <SocialSidebar/>
+
       <main className="flex-1">
-        
+
         <HeroSection />
 
-        {/* About Section */}
-       <AboutSection
-       benefits={benefits}
-       sectionRefs={sectionRefs}
-       visibleSections={visibleSections}
-       />
+        <AboutSection
+          benefits={benefits}
+          sectionRefs={sectionRefs}
+          visibleSections={visibleSections}
+        />
 
-        {/* Featured Properties */}
-     <PropertiesSection
-     featuredProperties={featuredProperties}
-     sectionRefs={sectionRefs}
-     visibleSections={visibleSections}
-     />
-   <CustomerReviewsSection/>
-        {/* Why Choose Us */}
-  <WhyChooseSection
-  sectionRefs={sectionRefs}
-  visibleSections={visibleSections}
-  />
-        {/* CTA Section */}
-       <CTASection
-         sectionRefs={sectionRefs}
-         visibleSections={visibleSections}
-         />
+        <PropertiesSection
+          featuredProperties={featuredProperties}
+          sectionRefs={sectionRefs}
+          visibleSections={visibleSections}
+        />
+
+        <CustomerReviewsSection />
+
+        <WhyChooseSection
+          sectionRefs={sectionRefs}
+          visibleSections={visibleSections}
+        />
+
+        <CTASection
+          sectionRefs={sectionRefs}
+          visibleSections={visibleSections}
+        />
+
       </main>
 
       <Footer />

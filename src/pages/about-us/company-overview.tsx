@@ -23,11 +23,8 @@ const fadeRight = {
 const CompanyOverview: React.FC = () => {
   return (
     <section
-      className="relative py-20 text-white overflow-hidden"
-     
+      className="relative py-20 text-white overflow-hidden" 
     >
-      <GoldenParticles />
-
       <div className="container mx-auto px-4">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
@@ -113,7 +110,7 @@ const CompanyOverview: React.FC = () => {
     src={belowBg}
     alt="Bottom Decoration"
     className="
-      w-[220px] sm:w-[300px] md:w-[400px] lg:w-[500px]
+    w-full
       h-auto object-cover opacity-90 transition-all duration-500
     "
   />

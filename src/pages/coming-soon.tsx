@@ -5,6 +5,7 @@ import bg1 from "@/assets/coverimg.jpg";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import comingSoonImg from "@/assets/comingsoon.jpg"; // replace with any relevant image
+import bgvideo from "@/assets/bgvideo.mp4";
 
 const ComingSoon = () => {
   const navigate = useNavigate();
@@ -18,31 +19,39 @@ const ComingSoon = () => {
         className="flex-1"
         style={{
           minHeight: "80vh",
-          background:
-            "radial-gradient(circle at center, rgba(50,50,50,1) 0%, rgba(5,5,5,1) 100%)",
         }}
       >
+                 <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
         {/* --- Header Section --- */}
         <section
           className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${bg1})` }}
         >
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0" />
           <div className="container relative z-10 mx-auto px-4 flex flex-col justify-center items-center text-center">
             <h1 className="font-serif text-white text-6xl md:text-5xl font-bold mb-4">
-              Under Construction Projects by{" "}
+              New Launches by{" "}
               <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
                 Noida Property Solution
               </span>
             </h1>
             <p className="text-xl text-white max-w-3xl">
-              Plan with Ease: Explore Our Under Construction Projects!
+              Plan with Ease: Explore Our New Launches!
             </p>
           </div>
         </section>
 
         {/* --- Coming Soon Section --- */}
-        <section className="py-24 bg-black/80 text-white">
+        <section className="py-24  text-white">
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2 text-center md:text-left space-y-6">
               <h2 className="text-4xl font-bold text-yellow-400">Coming Soon!</h2>

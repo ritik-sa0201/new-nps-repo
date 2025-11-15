@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./styles/fonts.css";
 
 /* Metallic Black Theme — polished, silver-black depth and contrast */
 /* All colors remain in HSL */

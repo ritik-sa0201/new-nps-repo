@@ -5,6 +5,7 @@ import commercialImage from "@/assets/commercial-property.jpg";
 import SocialSidebar from "@/components/socialSidebar";
 import bg1 from "@/assets/coverimg.jpg";
 import belowBg from "@/assets/belowwbg.png";
+import bgvideo from "@/assets/bgvideo.mp4";
 const ProjectsGreaterNoida = () => {
   const greaterNoidaProperties = [
     {
@@ -32,6 +33,17 @@ const ProjectsGreaterNoida = () => {
       <Navigation />
       <SocialSidebar/>
       <main className="flex-1">
+          <div className="fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
+        <video
+          src={bgvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+
         {/* Header */}
         <section
         className="relative text-primary-foreground py-20 shadow-lg bg-cover bg-center bg-no-repeat"
@@ -74,7 +86,7 @@ const ProjectsGreaterNoida = () => {
   <img
     src={belowBg}
     alt="Bottom Decoration"
-    className="w-[350px] md:w-[500px] h-auto object-cover opacity-90"
+    className="w-full h-auto object-cover opacity-90"
   />
 </div>
       </main>

@@ -40,7 +40,6 @@ const TeamSection: React.FC = () => {
       className="relative py-20 overflow-hidden text-white"
       
     >
-      <GoldenParticles />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Heading */}
