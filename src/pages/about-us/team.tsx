@@ -1,5 +1,4 @@
 import React from "react";
-import GoldenParticles from "@/components/golden-particles";
 import  dp1 from "@/assets/dps/dp4.jpeg"
 import  dp2 from "@/assets/dps/dp1.jpeg"
 import  dp3 from "@/assets/dps/dp2.jpeg"
