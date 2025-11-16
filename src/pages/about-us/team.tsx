@@ -47,7 +47,7 @@ const TeamSection: React.FC = () => {
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-white">
             Meet Our <span className="text-gold">Team</span>
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+          <p className="text-white max-w-2xl mx-auto text-lg">
             Our experienced professionals bring years of real estate expertise,
             dedication, and trust to help you find your dream property.
           </p>
@@ -78,7 +78,7 @@ const TeamSection: React.FC = () => {
                 <h3 className="font-semibold text-xl text-white group-hover:text-gold transition-all">
                   {member.name}
                 </h3>
-                <p className="text-sm text-gray-400">{member.role}</p>
+                <p className="text-sm text-white">{member.role}</p>
               </div>
             ))}
           </div>

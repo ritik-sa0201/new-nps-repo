@@ -60,9 +60,9 @@ const Testimonials: React.FC = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto mb-12 text-center">
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-white">
                 Experience real stories directly from our Instagram — where clients share their
-                journeys and experiences with NPS Estates.
+                journeys and experiences with NPS.
               </p>
             </div>
 

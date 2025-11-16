@@ -28,7 +28,7 @@ const CTASection: React.FC<CTASectionProps> = ({ visibleSections, sectionRefs })
             Ready to Find Your Dream Property?
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-white mb-10 leading-relaxed">
             Our expert team is here to guide you every step of the way. Begin your journey with confidence today.
           </p>
 
@@ -39,10 +39,10 @@ const CTASection: React.FC<CTASectionProps> = ({ visibleSections, sectionRefs })
                 variant="gold"
                 size="lg"
                 className="group relative px-8 overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center">
+              > 
+                <span className="font-bold text-lg relative z-10 flex items-center">
                   Browse Properties
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  <ArrowRight strokeWidth={3} className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
               </Button>
             </Link>
@@ -51,7 +51,7 @@ const CTASection: React.FC<CTASectionProps> = ({ visibleSections, sectionRefs })
               <Button
                 variant="outline"
                 size="lg"
-                className="px-8 border-2 hover:border-gold hover:text-gold transition-all duration-300"
+                className="text-lg font-bold px-8 border-2 hover:border-gold hover:text-gold transition-all duration-300"
               >
                 Contact Us
               </Button>

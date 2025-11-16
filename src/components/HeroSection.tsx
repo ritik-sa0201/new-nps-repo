@@ -100,7 +100,7 @@ const HeroSection = () => {
     bg-clip-text text-transparent 
     animate-shimmer bg-[length:200%_100%]
   ">
-    NOIDA PROPERTY SOLUTIONS
+    NOIDA PROPERTY SOLUTION
   </span>
 </motion.h1>
 

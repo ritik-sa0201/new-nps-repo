@@ -39,7 +39,7 @@ const CompanyOverview: React.FC = () => {
               <span className="text-gold">for Life</span>
             </h2>
 
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-white leading-relaxed">
               By Profession, Mr. T Chandra is a Mechanical Engineer with
               extensive experience working in leading multinational companies
               across Japan, the US, and Europe. His global exposure allows him
@@ -48,7 +48,7 @@ const CompanyOverview: React.FC = () => {
               and investment goals.
             </p>
 
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-white leading-relaxed">
               At{" "}
               <span className="text-gold font-semibold">
                 Noida Property Solution
@@ -59,7 +59,7 @@ const CompanyOverview: React.FC = () => {
               feels valued and confident throughout their property journey.
             </p>
 
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-white leading-relaxed">
               Whether you are a first-time homebuyer, an investor, or looking
               for the perfect residential or commercial space, we leverage our
               expertise and local market knowledge — especially in Noida,
@@ -67,9 +67,9 @@ const CompanyOverview: React.FC = () => {
               exceed expectations.
             </p>
 
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-white leading-relaxed">
               With{" "}
-              <span className="text-gold font-semibold">NPS Estates</span>, you
+              <span className="text-gold font-semibold">NPS</span>, you
               don’t just get a property — you gain a trusted partner dedicated
               to turning your real estate dreams into reality.
             </p>

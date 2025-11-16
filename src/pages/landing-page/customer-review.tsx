@@ -78,7 +78,7 @@ const CustomerReviewsSection: React.FC = () => {
             </div>
 
             {/* 💬 Review text */}
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            <p className="text-white text-lg leading-relaxed mb-6">
               “{review.text}”
             </p>
 

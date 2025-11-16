@@ -77,7 +77,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
           </span>
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed px-2">
+        <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed px-2">
           Leading real estate company specializing in premium property sales and
           purchases across Noida, Greater Noida, and Yamuna Expressway. We
           deliver excellence in every transaction.
@@ -161,7 +161,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                     <h3 className="font-semibold text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3 text-white">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-400 text-sm sm:text-base leading-relaxed px-2 sm:px-4">
+                    <p className="text-white text-sm sm:text-base leading-relaxed px-2 sm:px-4">
                       {benefit.desc}
                     </p>
                   </div>

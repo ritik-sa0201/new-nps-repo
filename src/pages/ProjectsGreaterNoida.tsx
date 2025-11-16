@@ -71,7 +71,7 @@ const ProjectsGreaterNoida = () => {
         <section className="py-12 ">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-muted-foreground leading-relaxed text-center">
+              <p className="text-lg text-white leading-relaxed text-center">
                 Greater Noida is emerging as a major educational and industrial hub with excellent
                 infrastructure. Our properties in Greater Noida offer strategic locations, modern amenities,
                 and strong growth potential for both residential and commercial investments.

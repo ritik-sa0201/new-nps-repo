@@ -51,10 +51,10 @@ const WordsFromFounders: React.FC = () => {
 
               {/* Founder Info */}
               <h3 className="text-2xl font-semibold">{founder.name}</h3>
-              <p className="text-base text-muted-foreground font-medium">
+              <p className="text-base text-white font-medium">
                 {founder.role}
               </p>
-              <p className="text-muted-foreground leading-relaxed text-base max-w-sm italic">
+              <p className="text-white  leading-relaxed text-base max-w-sm italic">
                 “{founder.quote}”
               </p>
             </div>

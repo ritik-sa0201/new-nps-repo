@@ -121,7 +121,7 @@ const PropertiesSection: React.FC<PropertiesSectionProps> = ({
               </span>
             </span>
           </h2>
-          <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto mt-3">
+          <p className="text-base md:text-lg text-white max-w-xl mx-auto mt-3">
             Explore our handpicked selection of premium properties across Noida
           </p>
         </div>
@@ -199,10 +199,12 @@ const PropertiesSection: React.FC<PropertiesSectionProps> = ({
             <Button
               variant="gold"
               size="lg"
-              className="group px-8 bg-gold text-black hover:bg-yellow-400"
+              className="group font-bold text-lg px-8 bg-gold text-black hover:bg-yellow-400"
             >
               View All Properties
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              <ArrowRight
+               strokeWidth={3}
+              className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
             </Button>
           </Link>
         </div>

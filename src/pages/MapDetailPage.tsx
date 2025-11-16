@@ -70,7 +70,7 @@ const MapDetailPage: React.FC = () => {
       </div>
 
       {/* --- Description --- */}
-      <p className="text-center text-gray-300 mt-6 px-4">
+      <p className="text-center text-white  mt-6 px-4">
         Layout plan of{" "}
         <span className="text-gold capitalize">{selected.name}</span> by{" "}
         <span className="font-semibold text-gold">

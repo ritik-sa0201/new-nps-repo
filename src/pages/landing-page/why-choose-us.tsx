@@ -61,7 +61,7 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
               NPS?
             </span>
           </h2>
-          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-white max-w-2xl mx-auto">
             Experience unmatched trust, transparency, and expert service.
           </p>
         </div>
@@ -97,7 +97,7 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
               </h3>
 
               {/* Description */}
-              <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+              <p className="text-white leading-relaxed text-sm md:text-base">
                 {item.desc}
               </p>
 
