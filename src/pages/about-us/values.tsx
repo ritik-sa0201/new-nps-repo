@@ -32,7 +32,7 @@ const OurCoreValues: React.FC = () => {
             <h3 className="font-semibold text-xl group-hover:text-gold transition-colors duration-300">
               Commitment
             </h3>
-            <p className="text-white text-sm leading-relaxed">
+            <p className="text-white text-left text-sm leading-relaxed">
               Commitment is more than a promise—doing our best to meet and exceed
               customer expectations consistently every time.
             </p>
@@ -46,7 +46,7 @@ const OurCoreValues: React.FC = () => {
             <h3 className="font-semibold text-xl group-hover:text-gold transition-colors duration-300">
               Integrity
             </h3>
-            <p className="text-white text-sm leading-relaxed">
+            <p className="text-white text-left  text-sm leading-relaxed">
               It reflects in our honest relationships, fair decisions, and our unwavering
               commitment to ethical and lawful conduct.
             </p>
@@ -60,7 +60,7 @@ const OurCoreValues: React.FC = () => {
             <h3 className="font-semibold text-xl group-hover:text-gold transition-colors duration-300">
               Customer First
             </h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-gray-300 text-left text-sm leading-relaxed">
               We prioritize our clients’ goals, provide transparent guidance, and ensure
               every experience is seamless, rewarding, and memorable.
             </p>
@@ -74,7 +74,7 @@ const OurCoreValues: React.FC = () => {
             <h3 className="font-semibold text-xl group-hover:text-gold transition-colors duration-300">
               Always Giving
             </h3>
-            <p className="text-white text-sm leading-relaxed">
+            <p className="text-white text-left text-sm leading-relaxed">
               We strongly believe that "No one has ever become poor by giving."  
               We go the extra mile to ensure your journey is smooth, informed, and rewarding.
             </p>

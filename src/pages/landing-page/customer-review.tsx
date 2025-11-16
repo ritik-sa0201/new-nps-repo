@@ -13,30 +13,29 @@ const reviews: Review[] = [
     name: "Rahul Sharma",
     text: "Excellent experience! They guided me through every step of my property purchase with full transparency.",
     rating: 5,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYMZ9uWkQZiC5nKxkfg7ggCA8rSsQxOcNItQ&s",  // Indian looking male
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYMZ9uWkQZiC5nKxkfg7ggCA8rSsQxOcNItQ&s",
   },
   {
     name: "Priya Mehta",
     text: "Professional and reliable team! Their market knowledge helped me find the perfect home in Noida.",
     rating: 5,
-    image: "https://i.pinimg.com/736x/43/27/48/43274862e89b00565173a869cf6cfc48.jpg", // Indian looking female
+    image:
+      "https://i.pinimg.com/736x/43/27/48/43274862e89b00565173a869cf6cfc48.jpg",
   },
   {
     name: "Amit Verma",
     text: "Top-notch service and great communication. I highly recommend Noida Property Solution to everyone!",
     rating: 5,
-    image: "https://ppf.org.in/assets/web/images/about/Photo_A_K_Das_DCPCR_PPF2.jpeg", // Indian looking male
+    image:
+      "https://ppf.org.in/assets/web/images/about/Photo_A_K_Das_DCPCR_PPF2.jpeg",
   },
 ];
 
 const CustomerReviewsSection: React.FC = () => {
   return (
-    <section
-      className="relative flex flex-col items-center justify-center text-center py-24 px-6 md:px-16 overflow-hidden"
-      
-    >
-   
-      {/* 🌟 Background pattern */}
+    <section className="relative flex flex-col items-center justify-center text-center py-24 px-6 md:px-16 overflow-hidden">
+      {/* Background pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div
           className="absolute inset-0"
@@ -47,11 +46,11 @@ const CustomerReviewsSection: React.FC = () => {
         />
       </div>
 
-      {/* 💬 Section header */}
+      {/* Header */}
       <div className="relative z-10 mb-12">
         <div className="flex flex-col items-center gap-3">
           <CheckCircle className="w-16 h-16 text-yellow-400 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]" />
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
             Our Customers Think We Are The{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
               Best
@@ -60,36 +59,43 @@ const CustomerReviewsSection: React.FC = () => {
         </div>
       </div>
 
-      {/* 🏆 Review Cards */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
+      {/* Review Cards */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl w-full">
         {reviews.map((review, index) => (
           <div
             key={index}
-            className="bg-gradient-to-b from-gray-900/80 to-black/80 border border-yellow-500/20 rounded-2xl p-8 text-left shadow-[0_0_20px_rgba(255,215,0,0.15)] hover:shadow-[0_0_25px_rgba(255,215,0,0.3)] transition-all duration-500"
+            className="bg-gradient-to-b from-gray-900/80 to-black/80 border border-yellow-500/20 rounded-2xl p-8 shadow-[0_0_20px_rgba(255,215,0,0.15)] hover:shadow-[0_0_25px_rgba(255,215,0,0.3)] transition-all duration-500"
           >
-            {/* ⭐ Rating */}
+            {/* Rating */}
             <div className="flex items-center mb-4">
               {[...Array(review.rating)].map((_, i) => (
                 <Star
                   key={i}
-                  className="text-yellow-400 w-5 h-5 fill-yellow-400 mr-1"
+                  className="text-yellow-400 w-6 h-6 fill-yellow-400 mr-1"
                 />
               ))}
             </div>
 
-            {/* 💬 Review text */}
-            <p className="text-white text-lg leading-relaxed mb-6">
+            {/* Review text */}
+            <p className="text-white text-base sm:text-lg leading-relaxed mb-6">
               “{review.text}”
             </p>
 
-            {/* 👤 Reviewer info */}
-            <div className="flex items-center gap-4">
+            {/* Reviewer info */}
+            <div className="flex items-center gap-4 mt-4">
               <img
                 src={review.image}
                 alt={review.name}
-                className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
+                className="
+                  w-16 h-16
+                  sm:w-20 sm:h-20
+                  rounded-full object-cover border-2 border-yellow-400 shadow-md
+                "
               />
-              <span className="font-semibold text-white text-lg">
+
+              <span
+                className="font-semibold text-lg sm:text-xl text-white"
+              >
                 {review.name}
               </span>
             </div>

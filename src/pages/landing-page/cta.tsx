@@ -28,7 +28,7 @@ const CTASection: React.FC<CTASectionProps> = ({ visibleSections, sectionRefs })
             Ready to Find Your Dream Property?
           </h2>
 
-          <p className="text-lg md:text-xl text-white mb-10 leading-relaxed">
+          <p className="text-lg text-left md:text-xl text-white mb-10 leading-relaxed">
             Our expert team is here to guide you every step of the way. Begin your journey with confidence today.
           </p>
 

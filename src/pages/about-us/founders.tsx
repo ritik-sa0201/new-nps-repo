@@ -1,10 +1,11 @@
 import React from "react";
 import belowBg from "@/assets/belowwbg.png";
+import  dp1 from "@/assets/dps/dp4.jpeg"
 const founders = [
   {
     name: "Mr T  Chandra",
     role: "Founder & Managing Director",
-    image: "https://static.vecteezy.com/system/resources/thumbnails/048/818/198/small/confident-young-man-smiling-amongst-autumn-leaves-in-a-sunlit-park-photo.jpeg", // dummy image
+    image:dp1, // dummy image
     quote:
       "Our vision is to redefine the real estate experience — making every client interaction transparent, rewarding, and memorable.",
   },
@@ -54,7 +55,7 @@ const WordsFromFounders: React.FC = () => {
               <p className="text-base text-white font-medium">
                 {founder.role}
               </p>
-              <p className="text-white  leading-relaxed text-base max-w-sm italic">
+              <p className="text-white text-left leading-relaxed text-base max-w-sm italic">
                 “{founder.quote}”
               </p>
             </div>

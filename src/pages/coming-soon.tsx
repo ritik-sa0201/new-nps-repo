@@ -58,7 +58,7 @@ const ComingSoon = () => {
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2 text-center md:text-left space-y-6">
               <h2 className="text-4xl font-bold text-yellow-400">Coming Soon!</h2>
-              <p className="text-lg text-white leading-relaxed">
+              <p className="text-lg text-white leading-relaxed  ">
                 We’re currently working on something exciting! Soon, you’ll be
                 able to explore our exclusive range of **under construction and
                 upcoming real estate projects** across Noida, Greater Noida, and

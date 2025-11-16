@@ -90,7 +90,7 @@ const Portfolio = () => {
         <section className="py-12 ">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-lg text-white leading-relaxed">
+              <p className="text-lg text-left text-white leading-relaxed">
                 Over the years, NPS has been instrumental in developing and selling properties
                 that have become landmarks in their respective locations. Our portfolio reflects our
                 commitment to quality, innovation, and customer satisfaction.

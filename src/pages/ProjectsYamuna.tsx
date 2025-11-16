@@ -48,7 +48,7 @@ const ProjectsYamuna = () => {
   <div className="relative container mx-auto px-4 text-center">
     <h1 className="font-serif text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
       Our Properties in{" "}
-      <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+      <span className="text-gold bg-gradient-to-r from-gold to-yellow-300 bg-clip-text animate-shimmer bg-[length:200%_100%]">
         Yamuna Expressway
       </span>
     </h1>

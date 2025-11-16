@@ -7,17 +7,16 @@ import FINAL_LOGO from "@/assets/NPS.png";
 import bgvideo from "@/assets/bgvideo.mp4";
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false); // mobile menu
-  const [hideOnScroll, setHideOnScroll] = useState(false); // hide nav when scrolling down
-  const [isSticky, setIsSticky] = useState(false); // sticky state for non-home or after threshold
-  const [projectsOpen, setProjectsOpen] = useState(false); // projects dropdown open
+  const [isOpen, setIsOpen] = useState(false);
+  const [hideOnScroll, setHideOnScroll] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
   const location = useLocation();
   const { data: user } = useAuth();
 
   const lastY = useRef(0);
   const isHome = location.pathname === "/";
 
-  // nav items
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -34,32 +33,45 @@ const Navigation = () => {
     { name: "New Launches", desc: "Explore our new launches", link: "/comingsoon" },
   ];
 
-  // Scroll handler — uses ref (lastY) to avoid stale closures
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
-      const scrollDown = y > lastY.current;
-      const scrollUp = y < lastY.current;
 
-      // sticky threshold: homepage may require larger scroll to become sticky
+    
       if (isHome) {
         setIsSticky(y > 150);
       } else {
         setIsSticky(y > 50);
       }
 
-      // hide on scroll down (when past a threshold), show on scroll up
-      const hideThreshold = isHome ? 120 : 80; // tuneable
-      if (scrollDown && y > hideThreshold) {
-        setHideOnScroll(true);
-      } else if (scrollUp) {
-        setHideOnScroll(false);
+      if (!isHome) {
+        // Always hide on scroll down
+        if (y > lastY.current) {
+          setHideOnScroll(true);
+        }
+        // only show when scrolled back to top
+        if (y === 0) {
+          setHideOnScroll(false);
+          setIsSticky(false);
+        }
       }
 
-      // if at very top, reset everything to initial (show nav, not sticky)
-      if (y === 0) {
-        setHideOnScroll(false);
-        setIsSticky(false);
+      // --- HOME PAGE: Keep old behaviour ---
+      if (isHome) {
+        const scrollDown = y > lastY.current;
+        const scrollUp = y < lastY.current;
+        const hideThreshold = 120;
+
+        if (scrollDown && y > hideThreshold) {
+          setHideOnScroll(true);
+        } else if (scrollUp) {
+          setHideOnScroll(false);
+        }
+
+        if (y === 0) {
+          setHideOnScroll(false);
+          setIsSticky(false);
+        }
       }
 
       lastY.current = y;
@@ -69,7 +81,6 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
-  // small helper to mark active link
   const isActive = (path: string) => location.pathname === path;
 
   return (
@@ -82,7 +93,6 @@ const Navigation = () => {
         ${hideOnScroll ? "-translate-y-full" : "translate-y-0"}
       `}
     >
-      {/* VIDEO BACKGROUND (only on non-home pages) */}
       {!isHome && (
         <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden">
           <video
@@ -96,9 +106,7 @@ const Navigation = () => {
         </div>
       )}
 
-      {/* NAV CONTENT */}
       <div className="relative z-10 container mx-auto px-4">
-        {/* MOBILE LOGO (visible on small screens) */}
         <div className="flex lg:hidden justify-center py-3">
           <Link to="/">
             <img
@@ -109,9 +117,7 @@ const Navigation = () => {
           </Link>
         </div>
 
-        {/* DESKTOP NAVBAR */}
         <div className="hidden lg:flex w-full justify-between items-start py-4">
-          {/* LEFT: LOGO */}
           <Link to="/" className="flex items-start">
             <img
               src={FINAL_LOGO}
@@ -122,31 +128,23 @@ const Navigation = () => {
             />
           </Link>
 
-          {/* RIGHT SIDE */}
           <div className="flex flex-col items-end space-y-4">
-            {/* TOP ROW: phone + login */}
-<div className="flex flex-row w-full items-start justify-end gap-6">
+            <div className="flex flex-row w-full items-start justify-end gap-6">
+              <div className="flex flex-row gap-2 items-center font-bold text-white leading-none">
+                <PhoneIcon size={25} className="mt-[2px]" />
+                <p className="text-2xl sm:text-3xl leading-none">+91 93119 31770</p>
+              </div>
 
-  {/* PHONE LEFT */}
-  <div className="flex flex-row gap-2 items-center font-bold text-white leading-none">
-    <PhoneIcon size={25} className="mt-[2px]" /> 
-    <p className="text-2xl sm:text-3xl leading-none">+91 93119 31770</p>
-  </div>
+              <Link to={user?.fullName ? "/logout" : "/login"}>
+                <div className="flex flex-row gap-2 items-center font-bold text-white leading-none hover:scale-105 transition">
+                  <User2Icon size={20} className="mt-[2px]" />
+                  <span className="text-xl sm:text-2xl leading-none">
+                    {user?.fullName ? "Logout" : "Login"}
+                  </span>
+                </div>
+              </Link>
+            </div>
 
-  {/* LOGIN RIGHT */}
-  <Link to={user?.fullName ? "/logout" : "/login"}>
-    <div className="flex flex-row gap-2 items-center font-bold text-white leading-none hover:scale-105 transition">
-      <User2Icon size={20} className="mt-[2px]" />
-      <span className="text-xl sm:text-2xl leading-none">
-        {user?.fullName ? "Logout" : "Login"}
-      </span>
-    </div>
-  </Link>
-
-</div>
-
-
-            {/* BOTTOM ROW: nav links */}
             <div className="flex items-center space-x-8">
               {navLinks.map((item) => (
                 <Link
@@ -160,7 +158,6 @@ const Navigation = () => {
                 </Link>
               ))}
 
-              {/* Projects dropdown: controlled by mouse enter/leave and click */}
               <div
                 className="relative"
                 onMouseEnter={() => setProjectsOpen(true)}
@@ -177,7 +174,6 @@ const Navigation = () => {
                   />
                 </button>
 
-                {/* Dropdown panel */}
                 <div
                   className={`absolute right-0 top-full mt-3 w-[500px] grid grid-cols-2 gap-3
                     bg-[rgba(25,25,25,0.95)] border border-gold/20 rounded-xl shadow-xl p-4
@@ -199,7 +195,6 @@ const Navigation = () => {
                 </div>
               </div>
 
-              {/* Contact */}
               <Link
                 to="/contact"
                 className={`text-base font-bold transition-colors ${
@@ -212,7 +207,6 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
         <button
           className="lg:hidden text-white absolute right-4 top-6"
           onClick={() => setIsOpen((s) => !s)}
@@ -221,21 +215,21 @@ const Navigation = () => {
           {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
         </button>
 
-        {/* MOBILE MENU CONTENT */}
         {isOpen && (
           <div className="lg:hidden pb-6 space-y-3 text-base font-semibold bg-[rgba(15,15,15,0.9)] rounded-xl p-4 border border-gold/20 shadow-lg">
             {navLinks.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block py-2 ${isActive(item.path) ? "text-gold" : "text-white hover:text-gold"}`}
+                className={`block py-2 ${
+                  isActive(item.path) ? "text-gold" : "text-white hover:text-gold"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
 
-            {/* Mobile projects list (expands inline, no flicker) */}
             <div>
               <div className="text-base font-bold text-gold mt-3 mb-2">Projects</div>
               <ul className="space-y-2 pl-3">
@@ -256,7 +250,9 @@ const Navigation = () => {
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className={`block py-2 ${isActive("/contact") ? "text-gold" : "text-white hover:text-gold"}`}
+              className={`block py-2 ${
+                isActive("/contact") ? "text-gold" : "text-white hover:text-gold"
+              }`}
             >
               Contact Us
             </Link>

@@ -1,11 +1,14 @@
 import React from "react";
 import GoldenParticles from "@/components/golden-particles";
-
+import  dp1 from "@/assets/dps/dp4.jpeg"
+import  dp2 from "@/assets/dps/dp1.jpeg"
+import  dp3 from "@/assets/dps/dp2.jpeg"
+import  dp4 from "@/assets/dps/dp3.jpeg"
 const teamMembers = [
   {
     name: "Mr. T. Chandra",
     role: "Founder & Managing Director",
-    image: "https://static.vecteezy.com/system/resources/thumbnails/048/818/198/small/confident-young-man-smiling-amongst-autumn-leaves-in-a-sunlit-park-photo.jpeg",
+    image: dp1,
   },
   {
     name: "Priya Mehta",
@@ -15,17 +18,17 @@ const teamMembers = [
   {
     name: "Sushil Kumar",
     role: "Senior Property Consultant",
-    image: "https://static.vecteezy.com/system/resources/thumbnails/049/174/246/small/a-smiling-young-indian-man-with-formal-shirts-outdoors-photo.jpg",
+    image: dp2,
   },
   {
     name: "Harsh Garg",
     role: "Marketing Lead",
-    image: "https://www.kalkifashion.com/blogs/wp-content/uploads/2023/11/Evolution_of_Indian_Mens_Ethnic_Wear_From_Tradition_to_Trendy.jpg",
+    image: dp4,
   },
   {
     name: "Gaurav Marothiya",
     role: "Client Relations Manager",
-    image: "https://cdn.pixabay.com/photo/2022/03/11/06/14/indian-man-7061278_1280.jpg",
+    image: dp3,
   },
   {
     name: "Rahul Singh",
@@ -47,7 +50,7 @@ const TeamSection: React.FC = () => {
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-white">
             Meet Our <span className="text-gold">Team</span>
           </h2>
-          <p className="text-white max-w-2xl mx-auto text-lg">
+          <p className="text-white text-left max-w-2xl mx-auto text-lg">
             Our experienced professionals bring years of real estate expertise,
             dedication, and trust to help you find your dream property.
           </p>
@@ -68,7 +71,7 @@ const TeamSection: React.FC = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-center transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
                   <div className="absolute inset-0 rounded-full bg-gold/20 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500" />

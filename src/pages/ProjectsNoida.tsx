@@ -87,7 +87,7 @@ const ProjectsNoida = () => {
         <section className="py-12 ">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-white leading-relaxed text-center">
+              <p className="text-lg text-white text-left leading-relaxed ">
                 Noida is a thriving hub of modern infrastructure and development. Our carefully selected
                 properties in Noida offer excellent connectivity, world-class amenities, and great investment
                 potential. Explore our collection of premium properties in various sectors of Noida.
